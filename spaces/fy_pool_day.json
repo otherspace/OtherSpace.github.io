@@ -1,0 +1,819 @@
+{
+  "space": [
+    [0, 0],
+    [83, 0],
+    [83, 73],
+    [0, 73]
+  ],
+  "materials": [
+    {
+      "name": "null",
+      "description": "Normal space, serves to be able to make empty spaces under objects."
+    },
+    {
+      "name": "solid",
+      "description": "The player cannot pass through solid materials."
+    },
+    {
+      "name": "liquid",
+      "description": "Once in the liquid, the player moves 25% slower and sinks to the bottom at the same speed, under the liquid the surrounding world takes on the color of the liquid, under the liquid you can move in all directions including up, down, left, right (underwater swimming)."
+    },
+    {
+      "name": "vapor",
+      "description": "When in gaseous space, visibility takes on the color of gas (by 25%)."
+    }
+  ],
+  "defaults": {
+    "height": 10,
+    "color": "#FFFFFF",
+    "material": "solid"
+  },
+  "shapes": [
+    {
+      "name": "floor",
+      "shape": [
+        [26, 0],
+        [57, 0],
+        [57, 1],
+        [26, 1]
+      ],
+      "height": 10,
+      "color": "#b4bfc1"
+    },
+    {
+      "name": "floor",
+      "shape": [
+        [26, 2],
+        [31, 2],
+        [31, 9],
+        [26, 9]
+      ],
+      "height": 10,
+      "color": "#b4bfc1"
+    },
+    {
+      "name": "pool floor",
+      "shape": [
+        [32, 2],
+        [39, 2],
+        [39, 9],
+        [32, 9]
+      ],
+      "height": 7,
+      "color": "#b4bfc1"
+    },
+    {
+      "name": "floor",
+      "shape": [
+        [40, 2],
+        [57, 2],
+        [57, 9],
+        [40, 9]
+      ],
+      "height": 10,
+      "color": "#b4bfc1"
+    },
+    {
+      "name": "floor",
+      "shape": [
+        [26, 10],
+        [57, 10],
+        [57, 27],
+        [26, 27]
+      ],
+      "height": 10,
+      "color": "#b4bfc1"
+    },
+    {
+      "name": "floor",
+      "shape": [
+        [26, 28],
+        [31, 28],
+        [31, 51],
+        [26, 51]
+      ],
+      "height": 10,
+      "color": "#b4bfc1"
+    },
+    {
+      "name": "pool floor",
+      "shape": [
+        [32, 28],
+        [47, 28],
+        [47, 51],
+        [32, 51]
+      ],
+      "height": 7,
+      "color": "#b4bfc1"
+    },
+    {
+      "name": "floor",
+      "shape": [
+        [48, 28],
+        [57, 28],
+        [57, 51],
+        [48, 51]
+      ],
+      "height": 10,
+      "color": "#b4bfc1"
+    },
+    {
+      "name": "floor",
+      "shape": [
+        [26, 52],
+        [57, 52],
+        [57, 63],
+        [26, 63]
+      ],
+      "height": 10,
+      "color": "#b4bfc1"
+    },
+    {
+      "name": "floor",
+      "shape": [
+        [0, 0],
+        [25, 0],
+        [25, 73],
+        [0, 73]
+      ],
+      "height": 10,
+      "color": "#975c60"
+    },
+    {
+      "name": "floor",
+      "shape": [
+        [26, 64],
+        [37, 64],
+        [37, 73],
+        [26, 73]
+      ],
+      "height": 10,
+      "color": "#975c60"
+    },
+    {
+      "name": "floor",
+      "shape": [
+        [38, 64],
+        [57, 64],
+        [57, 73],
+        [38, 73]
+      ],
+      "height": 10,
+      "color": "#4a587d"
+    },
+    {
+      "name": "floor",
+      "shape": [
+        [58, 0],
+        [83, 0],
+        [83, 73],
+        [58, 73]
+      ],
+      "height": 10,
+      "color": "#4a587d"
+    },
+    {
+      "name": "spawn point",
+      "shape": [
+        [0, 25],
+        [9, 25],
+        [9, 49],
+        [0, 49]
+      ],
+      "height": 1,
+      "color": null,
+      "material": null
+    },
+    {
+      "name": "spawn point",
+      "shape": [
+        [73, 25],
+        [81, 25],
+        [81, 50],
+        [73, 50]
+      ],
+      "height": 1,
+      "color": null,
+      "material": null
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [0, 0],
+        [27, 0],
+        [27, 9],
+        [0, 9]
+      ]
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [56, 0],
+        [83, 0],
+        [83, 9],
+        [56, 9]
+      ]
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [24, 26],
+        [25, 26],
+        [25, 45],
+        [24, 45]
+      ]
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [58, 25],
+        [59, 25],
+        [59, 47],
+        [58, 47]
+      ]
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [12, 10],
+        [13, 10],
+        [13, 17],
+        [12, 17]
+      ]
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [70, 10],
+        [71, 10],
+        [71, 17],
+        [70, 17]
+      ]
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [24, 16],
+        [25, 16],
+        [25, 17],
+        [24, 17]
+      ],
+      "height": 10
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [26, 16],
+        [35, 16],
+        [35, 17],
+        [26, 17]
+      ],
+      "height": 6
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [42, 16],
+        [57, 16],
+        [57, 17],
+        [42, 17]
+      ],
+      "height": 6
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [58, 16],
+        [59, 16],
+        [59, 17],
+        [58, 17]
+      ],
+      "height": 10
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [46, 7],
+        [47, 7],
+        [47, 8],
+        [46, 8]
+      ],
+      "height": 3
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [46, 9],
+        [47, 9],
+        [47, 10],
+        [46, 10]
+      ],
+      "height": 4
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [46, 11],
+        [47, 11],
+        [47, 12],
+        [46, 12]
+      ],
+      "height": 5
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [46, 13],
+        [47, 13],
+        [47, 15],
+        [46, 15]
+      ],
+      "height": 6
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [12, 25],
+        [13, 25],
+        [13, 49],
+        [12, 49]
+      ]
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [14, 36],
+        [23, 36],
+        [23, 37],
+        [14, 37]
+      ]
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [70, 25],
+        [71, 25],
+        [71, 50],
+        [70, 50]
+      ]
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [60, 36],
+        [69, 36],
+        [69, 37],
+        [60, 37]
+      ]
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [24, 55],
+        [25, 55],
+        [25, 61],
+        [24, 61]
+      ]
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [10, 62],
+        [25, 62],
+        [25, 63],
+        [10, 63]
+      ]
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [26, 64],
+        [27, 64],
+        [27, 68],
+        [26, 68]
+      ]
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [58, 56],
+        [59, 56],
+        [59, 61],
+        [58, 61]
+      ]
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [58, 62],
+        [73, 62],
+        [73, 63],
+        [58, 63]
+      ]
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [56, 64],
+        [57, 64],
+        [57, 68],
+        [56, 68]
+      ]
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [38, 64],
+        [45, 64],
+        [45, 65],
+        [38, 65]
+      ]
+    },
+    {
+      "name": "wall",
+      "shape": [
+        [38, 70],
+        [39, 70],
+        [39, 73],
+        [38, 73]
+      ],
+      "height": 4
+    },
+    {
+      "name": "closet",
+      "shape": [
+        [10, 29],
+        [11, 29],
+        [11, 46],
+        [10, 46]
+      ],
+      "height": 6,
+      "color": "#9ea9ab"
+    },
+    {
+      "name": "bench",
+      "shape": [
+        [14, 32],
+        [23, 32],
+        [23, 35],
+        [14, 35]
+      ],
+      "height": 2,
+      "color": "#9ea9ab"
+    },
+    {
+      "name": "bench",
+      "shape": [
+        [14, 38],
+        [23, 38],
+        [23, 41],
+        [14, 41]
+      ],
+      "height": 2,
+      "color": "#9ea9ab"
+    },
+    {
+      "name": "closet",
+      "shape": [
+        [82, 36],
+        [83, 36],
+        [83, 47],
+        [82, 47]
+      ],
+      "height": 6,
+      "color": "#9ea9ab"
+    },
+    {
+      "name": "bench",
+      "shape": [
+        [60, 32],
+        [69, 32],
+        [69, 35],
+        [60, 35]
+      ],
+      "height": 2,
+      "color": "#9ea9ab"
+    },
+    {
+      "name": "bench",
+      "shape": [
+        [60, 38],
+        [69, 38],
+        [69, 41],
+        [60, 41]
+      ],
+      "height": 2,
+      "color": "#9ea9ab"
+    },
+    {
+      "name": "closet",
+      "shape": [
+        [12, 60],
+        [23, 60],
+        [23, 61],
+        [12, 61]
+      ],
+      "height": 6,
+      "color": "#9ea9ab"
+    },
+    {
+      "name": "closet",
+      "shape": [
+        [60, 60],
+        [71, 60],
+        [71, 61],
+        [60, 61]
+      ],
+      "height": 6,
+      "color": "#9ea9ab"
+    },
+    {
+      "name": "pool",
+      "shape": [
+        [32, 28],
+        [47, 28],
+        [47, 51],
+        [32, 51]
+      ],
+      "height": 3,
+      "color": "#31d4f1",
+      "material": "liquid"
+    },
+    {
+      "name": "pool",
+      "shape": [
+        [32, 2],
+        [39, 2],
+        [39, 9],
+        [32, 9]
+      ],
+      "height": 3,
+      "color": "#31d4f1",
+      "material": "liquid"
+    },
+    {
+      "name": "void",
+      "shape": [
+        [1, 10],
+        [2, 10],
+        [2, 12],
+        [1, 12]
+      ],
+      "height": 1,
+      "material": null,
+      "color": null
+    },
+    {
+      "name": "toilet",
+      "shape": [
+        [1, 10],
+        [2, 10],
+        [2, 12],
+        [1, 12]
+      ],
+      "height": 2,
+      "color": "#9ea9ab"
+    },
+    {
+      "name": "void",
+      "shape": [
+        [5, 10],
+        [6, 10],
+        [6, 12],
+        [5, 12]
+      ],
+      "height": 1,
+      "material": null,
+      "color": null
+    },
+    {
+      "name": "toilet",
+      "shape": [
+        [5, 10],
+        [6, 10],
+        [6, 12],
+        [5, 12]
+      ],
+      "height": 2,
+      "color": "#9ea9ab"
+    },
+    {
+      "name": "void",
+      "shape": [
+        [9, 10],
+        [10, 10],
+        [10, 12],
+        [9, 12]
+      ],
+      "height": 1,
+      "material": null,
+      "color": null
+    },
+    {
+      "name": "toilet",
+      "shape": [
+        [9, 10],
+        [10, 10],
+        [10, 12],
+        [9, 12]
+      ],
+      "height": 2,
+      "color": "#9ea9ab"
+    },
+    {
+      "name": "void",
+      "shape": [
+        [73, 10],
+        [74, 10],
+        [74, 12],
+        [73, 12]
+      ],
+      "height": 1,
+      "material": null,
+      "color": null
+    },
+    {
+      "name": "toilet",
+      "shape": [
+        [73, 10],
+        [74, 10],
+        [74, 12],
+        [73, 12]
+      ],
+      "height": 2,
+      "color": "#9ea9ab"
+    },
+    {
+      "name": "void",
+      "shape": [
+        [77, 10],
+        [78, 10],
+        [78, 12],
+        [77, 12]
+      ],
+      "height": 1,
+      "material": null,
+      "color": null
+    },
+    {
+      "name": "toilet",
+      "shape": [
+        [77, 10],
+        [78, 10],
+        [78, 12],
+        [77, 12]
+      ],
+      "height": 2,
+      "color": "#9ea9ab"
+    },
+    {
+      "name": "void",
+      "shape": [
+        [81, 10],
+        [82, 10],
+        [82, 12],
+        [81, 12]
+      ],
+      "height": 1,
+      "material": null,
+      "color": null
+    },
+    {
+      "name": "toilet",
+      "shape": [
+        [81, 10],
+        [82, 10],
+        [82, 12],
+        [81, 12]
+      ],
+      "height": 2,
+      "color": "#9ea9ab"
+    },
+    {
+      "name": "void",
+      "shape": [
+        [72, 29],
+        [72, 29],
+        [72, 29],
+        [72, 29]
+      ],
+      "height": 1,
+      "material": null,
+      "color": null
+    },
+    {
+      "name": "toilet",
+      "shape": [
+        [72, 29],
+        [72, 29],
+        [72, 29],
+        [72, 29]
+      ],
+      "height": 2,
+      "color": "#9ea9ab"
+    },
+    {
+      "name": "void",
+      "shape": [
+        [72, 32],
+        [72, 32],
+        [72, 32],
+        [72, 32]
+      ],
+      "height": 1,
+      "material": null,
+      "color": null
+    },
+    {
+      "name": "toilet",
+      "shape": [
+        [72, 32],
+        [72, 32],
+        [72, 32],
+        [72, 32]
+      ],
+      "height": 2,
+      "color": "#9ea9ab"
+    },
+    {
+      "name": "void",
+      "shape": [
+        [72, 35],
+        [72, 35],
+        [72, 35],
+        [72, 35]
+      ],
+      "height": 1,
+      "material": null,
+      "color": null
+    },
+    {
+      "name": "toilet",
+      "shape": [
+        [72, 35],
+        [72, 35],
+        [72, 35],
+        [72, 35]
+      ],
+      "height": 2,
+      "color": "#9ea9ab"
+    },
+    {
+      "name": "chaise longue",
+      "shape": [
+        [43, 18],
+        [44, 18],
+        [44, 22],
+        [43, 22]
+      ],
+      "height": 1,
+      "color": "#6c86bd"
+    },
+    {
+      "name": "chaise longue",
+      "shape": [
+        [53, 40],
+        [57, 40],
+        [57, 41],
+        [53, 41]
+      ],
+      "height": 1,
+      "color": "#6c86bd"
+    },
+    {
+      "name": "pier",
+      "shape": [
+        [39, 47],
+        [40, 47],
+        [40, 53],
+        [39, 53]
+      ],
+      "height": 1,
+      "color": "#9ea9ab"
+    },
+    {
+      "name": "steam vent",
+      "shape": [
+        [58, 64],
+        [61, 64],
+        [61, 66],
+        [58, 66]
+      ],
+      "height": 6,
+      "color": "#000000",
+      "material": "vapor"
+    },
+    {
+      "name": "steam vent",
+      "shape": [
+        [23, 64],
+        [25, 64],
+        [25, 66],
+        [23, 66]
+      ],
+      "height": 6,
+      "color": "#000000",
+      "material": "vapor"
+    }
+  ]
+}

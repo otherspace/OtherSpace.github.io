@@ -1,0 +1,240 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  overflow: hidden; /* Prevent body scrollbars */
+  background-color: #333;
+  color: #eee;
+}
+
+.editor-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.toolbar {
+  padding: 15px;
+  border-right: 1px solid #555;
+  background-color: #444;
+  width: 150px;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+
+.toolbar h3 {
+  margin-top: 0;
+  font-size: 1em;
+  color: #ddd;
+}
+
+.toolbar button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #666;
+  background-color: #555;
+  color: #eee;
+  cursor: pointer;
+  text-align: left;
+}
+
+.toolbar button:hover {
+  background-color: #666;
+}
+
+.toolbar button.active {
+  background-color: #7799cc;
+  font-weight: bold;
+  border-color: #99bbff;
+  color: #fff;
+}
+
+.toolbar label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+}
+.toolbar hr {
+  border-color: #666;
+  margin: 15px 0;
+}
+
+#canvas-container {
+  flex-grow: 1; /* Fill remaining space */
+  position: relative; /* Needed for potential overlays */
+  min-width: 0; /* Prevent flexbox overflow issues */
+}
+
+#canvas-container canvas {
+  display: block; /* Remove extra space below canvas */
+}
+
+.sidebar {
+  width: 280px; /* Fixed width */
+  border-left: 1px solid #555;
+  display: flex;
+  flex-direction: column;
+  background-color: #444;
+  flex-shrink: 0;
+  overflow-y: auto; /* Allow sidebar content to scroll */
+}
+
+.properties-panel,
+.object-list-panel,
+.export-panel {
+  padding: 15px;
+  border-bottom: 1px solid #555;
+}
+.properties-panel:last-child,
+.object-list-panel:last-child,
+.export-panel:last-child {
+  border-bottom: none;
+}
+
+.sidebar h3,
+.sidebar h4 {
+  margin-top: 0;
+  font-size: 1em;
+  color: #ddd;
+}
+.sidebar h4 {
+  font-size: 0.9em;
+  color: #bbb;
+  margin-bottom: 5px;
+}
+
+.properties-panel label {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9em;
+  margin-bottom: 3px;
+}
+
+.properties-panel input[type="text"],
+.properties-panel input[type="number"],
+.properties-panel select,
+.properties-panel textarea {
+  width: calc(100% - 12px); /* Account for padding */
+  padding: 5px;
+  border: 1px solid #666;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  background-color: #555;
+  color: #eee;
+}
+.properties-panel input[type="color"] {
+  width: 50px;
+  height: 25px;
+  padding: 0;
+  border: 1px solid #666;
+  vertical-align: middle;
+  background-color: #555; /* May not be stylable in all browsers */
+}
+.properties-panel input:disabled,
+.properties-panel select:disabled,
+.properties-panel textarea:disabled {
+  background-color: #4a4a4a;
+  color: #888;
+  cursor: not-allowed;
+}
+.properties-panel button:disabled {
+  background-color: #4a4a4a;
+  color: #888;
+  cursor: not-allowed;
+  border-color: #555;
+}
+
+#default-properties {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px dashed #666;
+}
+
+#object-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 250px; /* Limit height */
+  overflow-y: auto;
+}
+
+#object-list li {
+  padding: 5px;
+  cursor: pointer;
+  border-bottom: 1px solid #555;
+  font-size: 0.9em;
+}
+
+#object-list li:hover {
+  background-color: #555;
+}
+
+#object-list li.selected {
+  background-color: #7799cc;
+  font-weight: bold;
+  color: #fff;
+}
+
+#json-output {
+  width: calc(100% - 12px);
+  margin-top: 10px;
+  font-family: monospace;
+  font-size: 0.8em;
+  border: 1px solid #666;
+  background-color: #3a3a3a;
+  color: #eee;
+}
+
+#export-json,
+#download-json,
+#apply-props,
+#tool-delete {
+  padding: 8px 12px;
+  background-color: #666;
+  border: 1px solid #888;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #eee;
+  margin-top: 5px;
+}
+#export-json:hover,
+#download-json:hover,
+#apply-props:hover,
+#tool-delete:hover {
+  background-color: #777;
+}
+#tool-delete,
+#apply-props {
+  margin-top: 10px;
+}
+#tool-delete {
+  background-color: #a55;
+  border-color: #c77;
+}
+#tool-delete:hover {
+  background-color: #b66;
+}
+#apply-props {
+  background-color: #5a5;
+  border-color: #7c7;
+}
+#apply-props:hover {
+  background-color: #6b6;
+}
+#undo-btn,
+#redo-btn {
+  background-color: #557;
+  border-color: #779;
+}
+#undo-btn:hover,
+#redo-btn:hover {
+  background-color: #668;
+}
+#undo-btn:disabled,
+#redo-btn:disabled {
+  background-color: #445;
+  color: #888;
+  cursor: not-allowed;
+  border-color: #556;
+}

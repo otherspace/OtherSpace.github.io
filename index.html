@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OtherSpace Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="editor-layout">
+        <div class="toolbar">
+            <h3>Tools</h3>
+            <button id="tool-select" class="tool-button active" data-tool="select" title="Select & Transform">Select</button>
+            <button id="tool-add" class="tool-button" data-tool="add" title="Add Default Box">Add Box</button>
+            <button id="tool-delete" class="tool-button" data-tool="delete" title="Delete Selected">Delete</button>
+            <hr>
+            <label><input type="radio" name="transform-mode" value="translate" checked> Move</label>
+            <label><input type="radio" name="transform-mode" value="scale"> Scale</label>
+            <hr>
+             <!-- NEW: Undo/Redo Buttons -->
+             <button id="undo-btn" title="Undo (Ctrl+Z)">Undo</button>
+             <button id="redo-btn" title="Redo (Ctrl+Y)">Redo</button>
+             <hr>
+            <button id="import-json-btn">Import JSON</button>
+            <input type="file" id="import-json-input" accept=".json" style="display: none;">
+        </div>
+
+        <div id="canvas-container">
+            <!-- Canvas will be appended here by Three.js -->
+        </div>
+
+        <div class="sidebar">
+            <div class="properties-panel">
+                <h3>Properties</h3>
+                <div id="properties-content">
+                    <p>(Select an object)</p>
+                    <label for="prop-name">Name:</label>
+                    <input type="text" id="prop-name" disabled>
+
+                    <label for="prop-height">Height:</label>
+                    <input type="number" id="prop-height" step="0.1" disabled>
+
+                    <label for="prop-color">Color:</label>
+                    <input type="color" id="prop-color" disabled>
+
+                    <label for="prop-material">Material:</label>
+                    <select id="prop-material" disabled>
+                        <!-- Options populated by JS -->
+                    </select>
+
+                     <label for="prop-shape-info">Shape (XZ): [[x1,z1],[x2,z1],[x2,z2],[x1,z2]]</label>
+                     <textarea id="prop-shape-info" rows="3"></textarea>
+
+                     <button id="apply-props" disabled>Apply Changes</button>
+                </div>
+                 <div id="default-properties">
+                     <h4>New Shape Defaults</h4>
+                     <label for="default-height">Height:</label>
+                     <input type="number" id="default-height" step="1" value="10">
+
+                     <label for="default-color">Color:</label>
+                     <input type="color" id="default-color" value="#CCCCCC">
+
+                     <label for="default-material">Material:</label>
+                     <select id="default-material">
+                         <!-- Options populated by JS -->
+                     </select>
+                 </div>
+            </div>
+
+            <div class="object-list-panel">
+                <h3>Shapes</h3>
+                <ul id="object-list">
+                    <!-- Populated by JS -->
+                </ul>
+            </div>
+
+             <div class="export-panel">
+                 <h3>Export</h3>
+                 <button id="export-json">Generate JSON</button>
+                 <textarea id="json-output" rows="10" readonly></textarea>
+                 <button id="download-json" style="display:none;">Download JSON</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Import Three.js and Addons -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.162.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.162.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="editor.js"></script>
+</body>
+</html>
