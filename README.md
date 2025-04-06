@@ -1,6 +1,6 @@
 # OtherSpace Builder
 
-<img src="https://raw.githubusercontent.com/otherspace/builder/refs/heads/main/screenshot.png">
+<img src="https://raw.githubusercontent.com/otherspace/otherspace.github.io/refs/heads/main/screenshot.png">
 
 A web-based 3D visual editor for creating game space layouts for a specific game engine that uses a defined JSON format. Built with HTML, CSS, JavaScript, and the Three.js library.
 
